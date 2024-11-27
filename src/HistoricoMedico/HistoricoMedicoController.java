@@ -34,14 +34,12 @@ public class HistoricoMedicoController {
 
     public void adicionarHistoricoMedico(String restricao, List<Tratamento> tratamentos, List<Consulta> consultas,
             List<Comorbidade> comorbidades, Paciente paciente, List<Operacao> operacoes) {
-        // Verifica se o paciente já possui um histórico
         for (HistoricoMedico historico : listaDeHistoricos) {
             if (historico.getPaciente().equals(paciente)) {
                 throw new IllegalArgumentException("O paciente já possui um histórico médico registrado.");
             }
         }
 
-        // Cria um novo histórico e adiciona à lista
         HistoricoMedico novoHistorico = new HistoricoMedico(restricao, tratamentos, consultas, comorbidades, paciente,
                 operacoes);
         listaDeHistoricos.add(novoHistorico);
