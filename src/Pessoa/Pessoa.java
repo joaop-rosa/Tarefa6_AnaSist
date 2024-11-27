@@ -3,11 +3,11 @@ package Pessoa;
 import java.time.LocalDate;
 
 public abstract class Pessoa {
-    String nome;
-    LocalDate dataNascimento;
-    String cpf;
-    String endereco;
-    String telefone;
+    protected String nome;
+    protected LocalDate dataNascimento;
+    protected String cpf;
+    protected String endereco;
+    protected String telefone;
 
     public Pessoa(String nome, LocalDate dataNascimento, String cpf, String endereco, String telefone) {
         this.nome = nome;
@@ -15,5 +15,13 @@ public abstract class Pessoa {
         this.cpf = cpf;
         this.endereco = endereco;
         this.telefone = telefone;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getNome() {
+        return nome;
     }
 }
